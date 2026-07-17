@@ -4,7 +4,7 @@ let activitats = [];
 
 async function carregarActivitats() {
 
-    const resposta = await fetch("data/catalog.json");
+    const resposta = await fetch("https://staperpetuacat-my.sharepoint.com/:u:/g/personal/pousf_staperpetua_cat/IQDfFKbk5SiVT5Nj_goTYsNgAU2MIhhE8ojVZjUtdtY_T4I?e=z00asv");
     activitats = await resposta.json();
 
     omplirFiltres(activitats);
