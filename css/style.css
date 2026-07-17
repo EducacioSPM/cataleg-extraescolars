@@ -1,8 +1,102 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin:40px;
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1{
-    color:#0b5cab;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f6f7fb;
+    color:#222;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    height:80px;
+    background:white;
+    border-bottom:1px solid #e5e5e5;
+}
+
+/* ---------- HERO ---------- */
+
+#hero{
+    height:260px;
+    background:white;
+    border-bottom:1px solid #e5e5e5;
+}
+
+/* ---------- CATÀLEG ---------- */
+
+#catalog{
+
+    display:grid;
+    grid-template-columns:300px 1fr;
+
+    gap:30px;
+
+    max-width:1400px;
+
+    margin:40px auto;
+
+    padding:0 20px;
+
+}
+
+/* ---------- FILTRES ---------- */
+
+#filters{
+
+    background:white;
+
+    border-radius:12px;
+
+    min-height:600px;
+
+    padding:20px;
+
+}
+
+/* ---------- RESULTATS ---------- */
+
+#results{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+#results-header{
+
+    height:50px;
+
+}
+
+#cards-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:25px;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+    height:120px;
+
+    background:white;
+
+    margin-top:60px;
+
+    border-top:1px solid #e5e5e5;
+
 }
