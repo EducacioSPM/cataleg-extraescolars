@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mostrar missatge
+      - name: Mostrar payload
         run: |
-          echo "EVENT REBUT DES DE POWER AUTOMATE"
-          echo "Tot funciona"
+          echo '${{ toJson(github.event.client_payload) }}'
