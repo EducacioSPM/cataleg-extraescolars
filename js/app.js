@@ -4,7 +4,12 @@ let activitats = [];
 
 async function carregarActivitats() {
 
-    const resposta = await fetch("https://staperpetuacat-my.sharepoint.com/:u:/g/personal/pousf_staperpetua_cat/IQDfFKbk5SiVT5Nj_goTYsNgAU2MIhhE8ojVZjUtdtY_T4I?e=z00asv");
+    const resposta = await fetch(
+        "data/catalog.json"
+    );
+
+    console.log(resposta);
+
     activitats = await resposta.json();
 
     omplirFiltres(activitats);
@@ -29,22 +34,18 @@ function filtrar() {
 
     let resultat = activitats;
 
-    // Categoria
     if (categoria !== "") {
         resultat = resultat.filter(a => a["Categoria"] === categoria);
     }
 
-    // Subcategoria
     if (subCategoria !== "") {
         resultat = resultat.filter(a => a["SubCategoria"] === subCategoria);
     }
 
-    // Organitzador
     if (organitzador !== "") {
         resultat = resultat.filter(a => a["NomOrganitzador"] === organitzador);
     }
 
-    // Any de naixement
     if (any !== "") {
         resultat = resultat.filter(a =>
             Number(any) >= Number(a["Max_AnyNaixement"]) &&
@@ -52,7 +53,6 @@ function filtrar() {
         );
     }
 
-    // Cercador
     if (text !== "") {
 
         resultat = resultat.filter(a =>

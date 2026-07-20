@@ -308,7 +308,7 @@ footer{
 
     background:white;
 
-    width:500px;
+    width:600px;
 
     max-width:90vw;
 
@@ -330,4 +330,48 @@ footer{
 
     cursor:pointer;
 
+}
+
+.fitxa-titol{
+    margin:0;
+    font-size:1.3rem;
+    line-height:1.2;
+}
+
+.fitxa-subtitol{
+    color:#666;
+    margin-top:4px;
+    margin-bottom:12px;
+    font-size:.9rem;
+}
+
+.fitxa-seccio{
+    margin-top:12px;
+    padding-top:8px;
+    border-top:1px solid #e5e5e5;
+}
+
+.fitxa-seccio h3{
+    margin-top:0;
+    margin-bottom:16px;
+    font-size:1.1rem;
+    color:#1c4f82;
+}
+
+.fitxa-camp{
+    margin-bottom:6px;
+}
+
+.fitxa-label{
+    display:block;
+    font-size:.9rem;
+    font-weight:600;
+    color:#666;
+    margin-bottom:4px;
+}
+
+.fitxa-valor{
+    display:block;
+    font-size:1rem;
+    line-height:1.3;
 }

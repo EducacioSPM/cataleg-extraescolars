@@ -29,7 +29,7 @@ function pintarTargetes(llista) {
             </div>
 
             <div class="preu">
-                💶 ${a["PreuMensual"]}
+                💶 ${a["PreuMensual"]} €
             </div>
 
             <button onclick="mostrarDetall(${activitats.indexOf(a)})">
