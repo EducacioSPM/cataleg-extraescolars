@@ -10,5 +10,7 @@ jobs:
 
     steps:
       - name: Mostrar payload
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
         run: |
-          echo '${{ toJson(github.event.client_payload) }}'
+          echo "$PAYLOAD"
