@@ -1319,7 +1319,7 @@
     "PeriodeInscripcio": " A partir del 17 de juliol ",
     "Periodicitat": null,
     "PreuMatricula": null,
-    "PreuMensual": null,
+    "PreuMensual": 21,
     "SubCategoria": "Otras",
     "TipusAgent": "AFA",
     "Title": "Iniciació a l'Atletisme",
