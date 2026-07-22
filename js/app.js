@@ -5,8 +5,8 @@ let activitats = [];
 async function carregarActivitats() {
 
     const resposta = await fetch(
-        "data/catalog.json"
-    );
+  `data/catalog.json?t=${Date.now()}`
+);
 
     console.log(resposta);
 
