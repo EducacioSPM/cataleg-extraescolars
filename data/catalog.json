@@ -1309,7 +1309,7 @@
     "InscripForaTermini": "Si",
     "MaxPlaces": null,
     "Max_AnyNaixement": null,
-    "MinPlaces": null,
+    "MinPlaces": 10,
     "Min_AnyNaixement": null,
     "NDies": null,
     "NGrups": null,
