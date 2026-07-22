@@ -1,11 +1,14 @@
 function formatPreu(valor) {
-    return Number(valor).toFixed(2).replace(".", ",") + " €";
+    return Number(valor || 0)
+        .toFixed(2)
+        .replace(".", ",") + " €";
 }
+
 function mostrarDetall(index) {
 
     const a = activitats[index];
 
-    document.getElementById("modalBody").innerHTML = `
+    document.getElementById("fitxa-detall-content").innerHTML = `
 
         <h2 class="fitxa-titol">${a["Title"]}</h2>
 
@@ -16,9 +19,36 @@ function mostrarDetall(index) {
         </div>
 
         <section class="fitxa-seccio">
-            <h3>Descripció</h3>
-            <p>${a["DescripcioActivitat"]}</p>
-        </section>
+
+   <section class="fitxa-seccio">
+
+    <h3>Descripció</h3>
+
+    <p id="descripcioText">
+        ${
+            a["DescripcioActivitat"].length > 180
+                ? a["DescripcioActivitat"].substring(0, 180) + "..."
+                : a["DescripcioActivitat"]
+        }
+    </p>
+
+    ${
+        a["DescripcioActivitat"].length > 180
+            ? `<button
+                    type="button"
+                    id="toggleDescripcio"
+                    data-curta="${a["DescripcioActivitat"].substring(0, 180)}..."
+                    data-completa="${a["DescripcioActivitat"]}">
+                    Veure més
+               </button>`
+            : ""
+    }
+
+</section>
+    
+    
+
+</section>
 
         <section class="fitxa-seccio">
             <h3>Informació pràctica</h3>
@@ -49,9 +79,20 @@ function mostrarDetall(index) {
                 <span class="fitxa-label">🔄 Periodicitat</span>
                 <span class="fitxa-valor">${a["Periodicitat"]}</span>
             </div>
+
+            <div class="fitxa-camp">
+    <span class="fitxa-label">👥 Places</span>
+    <span class="fitxa-valor">
+        ${a["MinPlaces"] ?? "-"}-${a["MaxPlaces"] ?? "-"} ·
+        Grups ${a["NGrups"] ?? "-"}
+    </span>
+</div>
+
+
         </section>
 
         <section class="fitxa-seccio">
+
             <h3>Cost</h3>
 
             <div class="fitxa-camp">
@@ -60,10 +101,9 @@ function mostrarDetall(index) {
             </div>
 
             <div class="fitxa-camp">
-    <span class="fitxa-label">💶 Quota mensual</span>
-    <span class="fitxa-valor">${formatPreu(a["PreuMensual"])}</span>
-</div>
-
+                <span class="fitxa-label">💶 Quota mensual</span>
+                <span class="fitxa-valor">${formatPreu(a["PreuMensual"])}</span>
+            </div>
 
             <div class="fitxa-camp">
                 <span class="fitxa-label">💶 Altres quotes</span>
@@ -74,28 +114,38 @@ function mostrarDetall(index) {
                 <span class="fitxa-label">📝 Concepte</span>
                 <span class="fitxa-valor">${a["AltresQuotesConcepte"] ?? "-"}</span>
             </div>
+
         </section>
-
-        <section class="fitxa-seccio">
-            <h3>Organització</h3>
-
-            <div class="fitxa-camp">
-                <span class="fitxa-label">👥 Places</span>
-                <span class="fitxa-valor">
-                    Mínim: ${a["MinPlaces"] ?? "-"} ·
-                    Màxim: ${a["MaxPlaces"] ?? "-"}
-                </span>
-            </div>
-
-            <div class="fitxa-camp">
-                <span class="fitxa-label">👨‍👩‍👧‍👦 Nombre de grups</span>
-                <span class="fitxa-valor">${a["NGrups"] ?? "-"}</span>
-            </div>
-        </section>
-
+        
     `;
 
-    document.getElementById("modal")
-        .classList.remove("ocult");
+    document.getElementById("fitxa-detall")
+    .classList.remove("ocult");
+
+    const btnDescripcio = document.getElementById("toggleDescripcio");
+
+if (btnDescripcio) {
+
+    btnDescripcio.addEventListener("click", () => {
+
+        const text = document.getElementById("descripcioText");
+
+        if (btnDescripcio.textContent === "Veure més") {
+
+            text.textContent = btnDescripcio.dataset.completa;
+            btnDescripcio.textContent = "Veure menys";
+
+        } else {
+
+            text.textContent = btnDescripcio.dataset.curta;
+            btnDescripcio.textContent = "Veure més";
+
+        }
+
+    });
+
 }
+
+}
+
 

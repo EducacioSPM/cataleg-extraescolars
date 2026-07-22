@@ -29,8 +29,10 @@ function filtrar() {
     const categoria = document.getElementById("filterCategoria").value;
     const subCategoria = document.getElementById("filterSubCategoria").value;
     const organitzador = document.getElementById("filterOrganitzador").value;
+    const ubicacio = document.getElementById("filterUbicacio").value;   
     const any = document.getElementById("filterAny").value;
     const text = document.getElementById("search").value.trim().toLowerCase();
+    
 
     let resultat = activitats;
 
@@ -45,7 +47,9 @@ function filtrar() {
     if (organitzador !== "") {
         resultat = resultat.filter(a => a["NomOrganitzador"] === organitzador);
     }
-
+if (ubicacio !== "") {
+    resultat = resultat.filter(a => a["Ubicacio"] === ubicacio);
+}
     if (any !== "") {
         resultat = resultat.filter(a =>
             Number(any) >= Number(a["Max_AnyNaixement"]) &&
@@ -69,7 +73,13 @@ function filtrar() {
     document.getElementById("numResultats").textContent =
         `${resultat.length} activitats disponibles`;
 
-    pintarTargetes(resultat);
+    const totalPagines = Math.ceil(resultat.length / targetesPerPagina);
+
+if (paginaActual > totalPagines) {
+    paginaActual = 1;
+}
+    
+        pintarTargetes(resultat);
 
 }
 
