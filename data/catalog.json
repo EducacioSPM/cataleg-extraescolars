@@ -1376,5 +1376,31 @@
     "TipusAgent": "AFA",
     "Title": "Batucada",
     "Ubicacio": null
+  },
+  {
+    "AltresQuotes": null,
+    "AltresQuotesConcepte": null,
+    "Categoria": "Esport",
+    "Curs": "2026/2027",
+    "DescripcioActivitat": "Mitjançant un conjunt d’activitats esportives i la pràctica d’exercicis i jocs, treballarem habilitats i destreses pròpies d’alguna modalitat esportiva, sense arribar a ser cap esport determinat.",
+    "HorariActivitat": null,
+    "InscripForaTermini": "Si",
+    "MaxPlaces": null,
+    "Max_AnyNaixement": null,
+    "MinPlaces": null,
+    "Min_AnyNaixement": null,
+    "NDies": null,
+    "NGrups": null,
+    "NomOrganitzador": "AFA Santa Perpètua",
+    "Observacions": null,
+    "PeriodeActivitat": null,
+    "PeriodeInscripcio": "A partir del 17 de juliol ",
+    "Periodicitat": null,
+    "PreuMatricula": null,
+    "PreuMensual": 21,
+    "SubCategoria": "Multiesport",
+    "TipusAgent": "AFA",
+    "Title": "Multiesport",
+    "Ubicacio": null
   }
 ]
