@@ -1454,5 +1454,31 @@
     "TipusAgent": "AFA",
     "Title": "Robòtica HackLab Kids",
     "Ubicacio": null
+  },
+  {
+    "AltresQuotes": null,
+    "AltresQuotesConcepte": "Imprescindible l'associació a l'AFA. ",
+    "Categoria": "Esport",
+    "Curs": "2026/2027",
+    "DescripcioActivitat": "Activitat orientada a descobrir el moviment, l’equilibri, la coordinació i l’expressió corporal d’una manera lúdica. Mitjançant jocs, petits reptes i tècniques bàsiques de circ, es treballa la confiança, la creativitat, la psicomotricitat i la cooperació en grup.",
+    "HorariActivitat": null,
+    "InscripForaTermini": "Si",
+    "MaxPlaces": null,
+    "Max_AnyNaixement": null,
+    "MinPlaces": null,
+    "Min_AnyNaixement": null,
+    "NDies": null,
+    "NGrups": null,
+    "NomOrganitzador": "AFA Santa Perpètua",
+    "Observacions": null,
+    "PeriodeActivitat": null,
+    "PeriodeInscripcio": "A partir del 17 de juliol ",
+    "Periodicitat": null,
+    "PreuMatricula": 20,
+    "PreuMensual": 30,
+    "SubCategoria": "Circ",
+    "TipusAgent": "AFA",
+    "Title": "Circ",
+    "Ubicacio": null
   }
 ]
