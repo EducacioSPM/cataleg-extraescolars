@@ -1298,5 +1298,31 @@
     "TipusAgent": "AFA",
     "Title": "Club del Puzle",
     "Ubicacio": "Escola la Florida"
+  },
+  {
+    "AltresQuotes": null,
+    "AltresQuotesConcepte": null,
+    "Categoria": null,
+    "Curs": "2026/2027",
+    "DescripcioActivitat": "Mitjançant jocs, circuits i reptes adaptats a l'edat, es treballa la resistència, la velocitat, la força, la cooperació i el gust per l'activitat física. ",
+    "HorariActivitat": null,
+    "InscripForaTermini": null,
+    "MaxPlaces": null,
+    "Max_AnyNaixement": null,
+    "MinPlaces": null,
+    "Min_AnyNaixement": null,
+    "NDies": null,
+    "NGrups": null,
+    "NomOrganitzador": "AFA Santa Perpètua",
+    "Observacions": null,
+    "PeriodeActivitat": null,
+    "PeriodeInscripcio": null,
+    "Periodicitat": null,
+    "PreuMatricula": null,
+    "PreuMensual": null,
+    "SubCategoria": null,
+    "TipusAgent": "AFA",
+    "Title": "Iniciació a l'Atletisme",
+    "Ubicacio": null
   }
 ]
