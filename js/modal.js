@@ -119,8 +119,21 @@ function mostrarDetall(index) {
         
     `;
 
+   if (window.innerWidth <= 768) {
+
+    document.getElementById("fitxa-mobile-content").innerHTML =
+        document.getElementById("fitxa-detall-content").innerHTML;
+
+    document.getElementById("fitxa-mobile")
+        .classList.remove("ocult");
+
+} else {
+
     document.getElementById("fitxa-detall")
-    .classList.remove("ocult");
+        .classList.remove("ocult");
+
+}
+
 
     const btnDescripcio = document.getElementById("toggleDescripcio");
 
@@ -145,6 +158,14 @@ if (btnDescripcio) {
     });
 
 }
+
+document.getElementById("tancarFitxaMobile")
+    .addEventListener("click", () => {
+
+        document.getElementById("fitxa-mobile")
+            .classList.add("ocult");
+
+    });
 
 }
 

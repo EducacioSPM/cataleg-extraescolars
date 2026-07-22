@@ -92,5 +92,20 @@ document.getElementById("btnResetFiltres").addEventListener("click", () => {
     actualitzarSubcategories();
 
     filtrar();
-
+    
 });
+
+if (window.innerWidth <= 768) {
+
+    document.getElementById("filtersContent")
+        .classList.add("ocult");
+
+}
+
+document.getElementById("filtersToggle")
+    .addEventListener("click", () => {
+
+        document.getElementById("filtersContent")
+            .classList.toggle("ocult");
+
+    });
