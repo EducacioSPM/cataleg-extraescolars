@@ -1428,5 +1428,31 @@
     "TipusAgent": "AFA",
     "Title": "Pluriesport",
     "Ubicacio": null
+  },
+  {
+    "AltresQuotes": null,
+    "AltresQuotesConcepte": null,
+    "Categoria": "Ciència i tecnologia",
+    "Curs": "2026/2027",
+    "DescripcioActivitat": "Projecte de lleure en robòtica i programació educativa per a infants, basat en  tecnologies obertes i impulsat per l’economia social i cooperativa. A través del joc i la creació d’autòmats,  videojocs i robots, es fomenta el raonament lògic, la creativitat, l’experimentació i el treball en equip.",
+    "HorariActivitat": null,
+    "InscripForaTermini": "Si",
+    "MaxPlaces": null,
+    "Max_AnyNaixement": null,
+    "MinPlaces": null,
+    "Min_AnyNaixement": null,
+    "NDies": null,
+    "NGrups": null,
+    "NomOrganitzador": "AFA Santa Perpètua",
+    "Observacions": null,
+    "PeriodeActivitat": null,
+    "PeriodeInscripcio": "A partir del 17 de juliol ",
+    "Periodicitat": null,
+    "PreuMatricula": null,
+    "PreuMensual": null,
+    "SubCategoria": "Otras",
+    "TipusAgent": "AFA",
+    "Title": "Robòtica HackLab Kids",
+    "Ubicacio": null
   }
 ]
