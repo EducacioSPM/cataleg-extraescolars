@@ -309,12 +309,12 @@ footer{
 .hero-content{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:30px;
+    justify-content: flex-start;
+    gap:20px;
 }
 
 .hero-text{
-    flex:1;
+    flex:0 0 60%;
 }
 
 .hero-illustration{
@@ -322,7 +322,7 @@ footer{
     width:auto;
     object-fit:contain;
     flex-shrink:0;
-}
+       }
 
 #paginacio{
     display:flex;
