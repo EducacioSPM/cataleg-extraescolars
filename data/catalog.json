@@ -1328,11 +1328,11 @@
   {
     "AltresQuotes": null,
     "AltresQuotesConcepte": null,
-    "Categoria": null,
+    "Categoria": "Arts plàstiques i disseny",
     "Curs": "2026/2027",
-    "DescripcioActivitat": null,
+    "DescripcioActivitat": "Activitat orientada a estimular la creativitat, l’expressió personal i la descoberta de diferents tècniques artístiques. A través de propostes plàstiques, experimentació amb materials i petits projectes creatius, es treballa la imaginació, la motricitat fina, la sensibilitat artística i el gaudi pel procés creatiu. ",
     "HorariActivitat": null,
-    "InscripForaTermini": null,
+    "InscripForaTermini": "Si",
     "MaxPlaces": null,
     "Max_AnyNaixement": null,
     "MinPlaces": null,
@@ -1342,13 +1342,13 @@
     "NomOrganitzador": "AFA Santa Perpètua",
     "Observacions": null,
     "PeriodeActivitat": null,
-    "PeriodeInscripcio": null,
+    "PeriodeInscripcio": " A partir del 17 de juliol ",
     "Periodicitat": null,
     "PreuMatricula": null,
     "PreuMensual": null,
-    "SubCategoria": null,
+    "SubCategoria": "Manualitats",
     "TipusAgent": "AFA",
-    "Title": null,
+    "Title": "Taller d'Art",
     "Ubicacio": null
   }
 ]
