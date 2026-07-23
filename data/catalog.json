@@ -1375,7 +1375,7 @@
     "SubCategoria": "Música",
     "TipusAgent": "AFA",
     "Title": "Batucada",
-    "Ubicacio": null
+    "Ubicacio": "Escola Santa Perpètua"
   },
   {
     "AltresQuotes": null,
@@ -1401,7 +1401,7 @@
     "SubCategoria": "Multiesport",
     "TipusAgent": "AFA",
     "Title": "Multiesport",
-    "Ubicacio": null
+    "Ubicacio": "Escola Santa Perpètua"
   },
   {
     "AltresQuotes": null,
@@ -1427,7 +1427,7 @@
     "SubCategoria": "Multiesport",
     "TipusAgent": "AFA",
     "Title": "Pluriesport",
-    "Ubicacio": null
+    "Ubicacio": "Escola Santa Perpètua"
   },
   {
     "AltresQuotes": null,
@@ -1453,7 +1453,7 @@
     "SubCategoria": "Otras",
     "TipusAgent": "AFA",
     "Title": "Robòtica HackLab Kids",
-    "Ubicacio": null
+    "Ubicacio": "Escola Santa Perpètua"
   },
   {
     "AltresQuotes": null,
@@ -1479,6 +1479,6 @@
     "SubCategoria": "Circ",
     "TipusAgent": "AFA",
     "Title": "Circ",
-    "Ubicacio": null
+    "Ubicacio": "Escola Santa Perpètua"
   }
 ]
