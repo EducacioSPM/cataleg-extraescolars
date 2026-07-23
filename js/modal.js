@@ -135,13 +135,21 @@ function mostrarDetall(index) {
 }
 
 
-    const btnDescripcio = document.getElementById("toggleDescripcio");
+    console.log(document.querySelectorAll("#toggleDescripcio").length);
+
+    const btnDescripcio =
+    window.innerWidth <= 768
+        ? document.querySelector("#fitxa-mobile-content #toggleDescripcio")
+        : document.querySelector("#fitxa-detall-content #toggleDescripcio");
 
 if (btnDescripcio) {
 
     btnDescripcio.addEventListener("click", () => {
 
-        const text = document.getElementById("descripcioText");
+        const text =
+    window.innerWidth <= 768
+        ? document.querySelector("#fitxa-mobile-content #descripcioText")
+        : document.querySelector("#fitxa-detall-content #descripcioText");
 
         if (btnDescripcio.textContent === "Veure més") {
 
