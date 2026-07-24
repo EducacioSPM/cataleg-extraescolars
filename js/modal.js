@@ -117,7 +117,33 @@ function mostrarDetall(index) {
 
         </section>
         
+        ${a["EnllacInformacio"] ? `
+
+        <section class="fitxa-seccio">
+
+            <h3>Més informació</h3>
+
+            <p>
+                Per conèixer els detalls sobre el procediment d'inscripció,
+                els terminis o altra informació específica d'aquesta activitat,
+                consulta la pàgina de l'entitat organitzadora.
+            </p>
+
+            <p>
+                <a href="${a["EnllacInformacio"]}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn-mes-info">
+                   🔗 Més informació
+                </a>
+            </p>
+
+        </section>
+
+        ` : ""}
+        
     `;
+
 
    if (window.innerWidth <= 768) {
 
