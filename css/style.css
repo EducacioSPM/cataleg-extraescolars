@@ -627,6 +627,11 @@ footer{
         position:static;
     }
 
+        #filters{
+        position:static;
+        top:auto;
+    }
+
 .hero-content{
     flex-direction:column;
     text-align:center;
