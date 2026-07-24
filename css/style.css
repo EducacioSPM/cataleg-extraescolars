@@ -778,3 +778,8 @@ footer{
 .text-info-extra {
     font-size: 0.8rem;
 }
+
+#descripcioText {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
