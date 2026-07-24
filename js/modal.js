@@ -123,7 +123,7 @@ function mostrarDetall(index) {
 
             <h3>Més informació</h3>
 
-            <p>
+            <p class="text-info-extra">
                 Per conèixer els detalls sobre el procediment d'inscripció,
                 els terminis o altra informació específica d'aquesta activitat,
                 consulta la pàgina de l'entitat organitzadora.
