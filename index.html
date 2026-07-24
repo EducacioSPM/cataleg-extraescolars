@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+<!-- ===========================
+     MODAL INFORMACIÓ LEGAL
+=========================== -->
+
+<div id="modalLegal" class="modal ocult">
+
+    <div class="modal-legal">
+
+        <span id="tancarLegal">&times;</span>
+
+        <h2 id="modalTitol"></h2>
+
+        <div id="modalCos"></div>
+
+    </div>
+
+</div>
+
 <body>
 
 <header id="header">
@@ -120,10 +138,11 @@
         
     </main>
 
-  <footer>
+ <footer>
 
     <div class="footer-content">
 
+        <!-- Informació -->
         <div class="footer-info">
 
             <h3>Catàleg d'activitats foraescola</h3>
@@ -132,35 +151,52 @@
 
             <p>Servei d'Acció Socioeducativa</p>
 
-            <p>© 2026</p>
-
-        </div>
-
-        <div class="footer-logos">
-
-            <img
-                src="assets/logos/PEE.png"
-                alt="Pla educatiu d'entorn"
-                class="footer-logo">
-
-            <img
-                src="assets/logos/logo-DIBA.png"
-                alt="Diputació de Barcelona"
-                class="footer-logo">
-
-            <img
-                src="assets/logos/DeptEdu.png"
-                alt="Departament d'Educació de la Generalitat de Catalunya"
-                class="footer-logo">
-
-        </div>
-
-        <div class="footer-text">
-
-            <h3>Contacte</h3>
-
             <a href="mailto:educacio@staperpetua.cat">
                 educacio@staperpetua.cat
+            </a>
+
+            <p class="copyright">© 2026</p>
+
+        </div>
+
+
+        <!-- Logos -->
+        <div class="footer-logos">
+
+            <img src="assets/logos/PEE.png"
+                 alt="Pla Educatiu d'Entorn"
+                 class="footer-logo">
+
+            <img src="assets/logos/logo-DIBA.png"
+                 alt="Diputació de Barcelona"
+                 class="footer-logo">
+
+            <img src="assets/logos/DeptEdu.png"
+                 alt="Departament d'Educació"
+                 class="footer-logo">
+
+        </div>
+
+
+        <!-- Legal -->
+        <div class="footer-legal">
+
+            <a href="#" id="avisLegal">
+                Avís legal
+            </a>
+
+            <a href="#" id="privacitat">
+                Política de privacitat
+            </a>
+
+            <a href="#" id="cookies">
+                Política de cookies
+            </a>
+
+            <a href="https://www.staperpetua.cat/altres-continguts/accessibilitat"
+               target="_blank"
+               rel="noopener">
+                Política d'accessibilitat
             </a>
 
         </div>
@@ -171,6 +207,7 @@
 
     <script src="js/cards.js"></script>
     <script src="js/filters.js"></script>
+    <script src="js/legal.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/app.js"></script>
 

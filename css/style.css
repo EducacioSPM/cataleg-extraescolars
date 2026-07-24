@@ -100,14 +100,6 @@ header h1{
     gap:25px;
     }
 
-/* ---------- FOOTER ---------- */
-
-footer{
-    height:120px;
-    background:white;
-    margin-top:60px;
-    border-top:1px solid #e5e5e5;
-}
 
 /* ---------- TARGETES ---------- */
 
@@ -531,6 +523,17 @@ footer{
     line-height:1.35;
 }
 
+.footer-info a{
+    color:#666;
+    font-size:.80rem;
+    text-decoration:none;
+    line-height:1.35;
+}
+
+.footer-info a:hover{
+    text-decoration:underline;
+}
+
 
 /* =====================================================
    LOGOS
@@ -544,7 +547,7 @@ footer{
 }
 
 .footer-logo{
-    height:52px;
+    height:46px;
     width:auto;
     object-fit:contain;
 }
@@ -554,29 +557,23 @@ footer{
    CONTACTE
 ===================================================== */
 
-.footer-text{
+.footer-legal{
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:flex-start;
+    align-items:flex-end;
+    gap:6px;
+    padding-right:30px;
 }
 
-.footer-text h3{
-    margin:0 0 0px;
-    font-size:.8rem;
-    font-weight:700;
+.footer-legal a{
     color:#666;
-}
-
-.footer-text a{
-    color:#666;
-    font-size:.8rem;
+    font-size:.80rem;
     text-decoration:none;
     transition:.2s;
+    display:block;
 }
 
-.footer-text a:hover{
-    color:#4CAF50;
+.footer-legal a:hover{
     text-decoration:underline;
 }
 
@@ -598,9 +595,9 @@ footer{
     }
 
     .footer-info,
-    .footer-text{
-        align-items:center;
-    }
+.footer-legal{
+    align-items:center;
+}
 
     .footer-logos{
         display:flex;
@@ -612,7 +609,7 @@ footer{
 
     .footer-logo{
         max-width:100%;
-        height:45px;
+        height:50px;
     }
 }
 
@@ -700,4 +697,63 @@ footer{
     font-weight:600;
 }
 
+}
+
+/* =====================================================
+   MODAL LEGAL
+===================================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:5000;
+}
+
+.ocult{
+    display:none;
+}
+
+.modal-legal{
+    width:min(900px,90vw);
+    max-height:85vh;
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    overflow-y:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,.30);
+    position:relative;
+}
+
+#tancarLegal{
+    position:absolute;
+    top:18px;
+    right:22px;
+    font-size:32px;
+    cursor:pointer;
+    color:#666;
+}
+
+#tancarLegal:hover{
+    color:#000;
+}
+
+#modalTitol{
+    margin-bottom:20px;
+    color:#4a4a4a;
+}
+
+#modalCos h3{
+    margin-top:22px;
+    margin-bottom:8px;
+    color:#4a4a4a;
+}
+
+#modalCos p{
+    margin-bottom:12px;
+    line-height:1.6;
+    color:#555;
 }

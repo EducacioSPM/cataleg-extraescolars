@@ -86,3 +86,78 @@ if (paginaActual > totalPagines) {
 // Inici de l'aplicació
 
 carregarActivitats();
+
+// ==========================
+// MODAL LEGAL
+// ==========================
+
+const modalLegal = document.getElementById("modalLegal");
+const modalTitol = document.getElementById("modalTitol");
+const modalCos = document.getElementById("modalCos");
+
+function obrirModalLegal(textLegal) {
+
+    modalTitol.textContent = textLegal.titol;
+    modalCos.innerHTML = textLegal.contingut;
+
+    modalLegal.classList.remove("ocult");
+
+}
+
+// ---------- AVÍS LEGAL ----------
+
+document.getElementById("avisLegal").addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    obrirModalLegal(textosLegals.avis);
+
+});
+
+// ---------- PRIVACITAT ----------
+
+document.getElementById("privacitat").addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    obrirModalLegal(textosLegals.privacitat);
+
+});
+
+// ---------- COOKIES ----------
+
+document.getElementById("cookies").addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    obrirModalLegal(textosLegals.cookies);
+
+});
+
+// ---------- TANCAR AMB LA X ----------
+
+document.getElementById("tancarLegal").addEventListener("click", function () {
+
+    modalLegal.classList.add("ocult");
+
+});
+
+// ---------- TANCAR CLICANT FORA ----------
+
+modalLegal.addEventListener("click", function (e) {
+
+    if (e.target === modalLegal) {
+        modalLegal.classList.add("ocult");
+    }
+
+});
+
+// ---------- TANCAR AMB ESC ----------
+
+document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+        modalLegal.classList.add("ocult");
+    }
+
+});
