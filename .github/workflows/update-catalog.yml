@@ -5,19 +5,18 @@ on:
   schedule:
     - cron: '*/15 * * * *'    # comprova canvis cada 15 minuts (repo públic = gratuït i il·limitat)
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: "DIAGNOSTIC - Descarrega catalog.json des de OneDrive"
+      - name: Descarrega catalog.json des de Google Drive
         run: |
-          echo "Codi HTTP rebut:"
-          curl -sL -o response.txt -w "%{http_code}\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "${{ secrets.CATALOG_JSON_URL }}"
-          echo "---"
-          echo "Primers 500 caràcters de la resposta:"
-          head -c 500 response.txt
+          curl -L -f -o catalog.json.new "${{ secrets.CATALOG_JSON_URL }}"
 
       - name: Valida que el JSON és correcte
         run: |
@@ -36,3 +35,4 @@ jobs:
             echo "Sense canvis, no cal fer commit."
             rm -f catalog.json.new
           fi
+
