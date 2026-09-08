@@ -1,33 +1,34 @@
-name: Update catalog
+name: Update catalog.json
 
 on:
-  repository_dispatch:
-    types: [update-catalog]
+  workflow_dispatch:          # permet executar-ho manualment des de GitHub
+  schedule:
+    - cron: '*/15 * * * *'    # comprova canvis cada 15 minuts (repo públic = gratuït i il·limitat)
 
 jobs:
   update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Write catalog.json
-        env:
-          PAYLOAD: ${{ toJson(github.event.client_payload.catalog) }}
+      - name: Descarrega catalog.json des de OneDrive
         run: |
-          mkdir -p data
-          echo "$PAYLOAD" > data/catalog.json
+          curl -L -f -o catalog.json.new "${{ secrets.CATALOG_JSON_URL }}"
 
-      - name: Commit changes
+      - name: Valida que el JSON és correcte
         run: |
-          git config user.name "catalog-bot"
-          git config user.email "catalog-bot@github.com"
+          python3 -m json.tool catalog.json.new > /dev/null
 
-          git add data/catalog.json
-
-          git diff --staged --quiet || git commit -m "Actualitza catalog.json"
-
-      - name: Push changes
+      - name: Compara i fes commit si hi ha canvis
         run: |
-          git push
+          if ! cmp -s catalog.json.new data/catalog.json 2>/dev/null; then
+            mv catalog.json.new data/catalog.json
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/catalog.json
+            git commit -m "Actualitza catàleg [auto]"
+            git push
+          else
+            echo "Sense canvis, no cal fer commit."
+            rm -f catalog.json.new
+          fi
