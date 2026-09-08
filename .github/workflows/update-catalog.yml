@@ -11,9 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Descarrega catalog.json des de OneDrive
+      - name: [DIAGNÒSTIC] Descarrega catalog.json des de OneDrive
         run: |
-          curl -L -f -o catalog.json.new "${{ secrets.CATALOG_JSON_URL }}"
+          echo "Codi HTTP rebut:"
+          curl -sL -o response.txt -w "%{http_code}\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "${{ secrets.CATALOG_JSON_URL }}"
+          echo "---"
+          echo "Primers 500 caràcters de la resposta:"
+          head -c 500 response.txt
 
       - name: Valida que el JSON és correcte
         run: |
