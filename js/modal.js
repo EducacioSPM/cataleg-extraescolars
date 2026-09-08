@@ -54,34 +54,34 @@ function mostrarDetall(index) {
             <h3>Informació pràctica</h3>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">📍 Ubicació</span>
+                <span class="fitxa-label">📍 Ubicació:</span>
                 <span class="fitxa-valor">${a["Ubicacio"]}</span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">🕒 Horari</span>
+                <span class="fitxa-label">🕒 Horari:</span>
                 <span class="fitxa-valor">${a["HorariActivitat"]}</span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">👧 Edats</span>
+                <span class="fitxa-label">👧 Edats:</span>
                 <span class="fitxa-valor">
                     Nascuts entre ${a["Max_AnyNaixement"]} i ${a["Min_AnyNaixement"]}
                 </span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">📅 Període</span>
+                <span class="fitxa-label">📅 Període:</span>
                 <span class="fitxa-valor">${a["PeriodeActivitat"]}</span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">🔄 Periodicitat</span>
+                <span class="fitxa-label">🔄 Periodicitat:</span>
                 <span class="fitxa-valor">${a["Periodicitat"]}</span>
             </div>
 
             <div class="fitxa-camp">
-    <span class="fitxa-label">👥 Places</span>
+    <span class="fitxa-label">👥 Places:</span>
     <span class="fitxa-valor">
         ${a["MinPlaces"] ?? "-"}-${a["MaxPlaces"] ?? "-"} ·
         Grups ${a["NGrups"] ?? "-"}
@@ -96,26 +96,42 @@ function mostrarDetall(index) {
             <h3>Cost</h3>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">💶 Matrícula</span>
+                <span class="fitxa-label">💶 Matrícula:</span>
                 <span class="fitxa-valor">${formatPreu(a["PreuMatricula"])}</span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">💶 Quota mensual</span>
+                <span class="fitxa-label">💶 Quota mensual:</span>
                 <span class="fitxa-valor">${formatPreu(a["PreuMensual"])}</span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">💶 Altres quotes</span>
+                <span class="fitxa-label">💶 Altres quotes:</span>
                 <span class="fitxa-valor">${formatPreu(a["AltresQuotes"])}</span>
             </div>
 
             <div class="fitxa-camp">
-                <span class="fitxa-label">📝 Concepte</span>
+                <span class="fitxa-label">📝 Concepte:</span>
                 <span class="fitxa-valor">${a["AltresQuotesConcepte"] ?? "-"}</span>
             </div>
 
         </section>
+
+        </section>
+
+        ${a["Observacions"] ? `
+
+        <section class="fitxa-seccio">
+
+            <h3>Observacions</h3>
+
+            <p class="fitxa-observacions">
+                ${a["Observacions"]}
+            </p>
+
+        </section>
+
+        ` : ""}
         
         ${a["EnllacInformacio"] ? `
 
@@ -126,7 +142,7 @@ function mostrarDetall(index) {
             <p class="text-info-extra">
                 Per conèixer els detalls sobre el procediment d'inscripció,
                 els terminis o altra informació específica d'aquesta activitat,
-                consulta la pàgina de l'entitat organitzadora.
+                fes clic al següent enllaç.
             </p>
 
             <p>

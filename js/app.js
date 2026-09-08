@@ -4,11 +4,10 @@ let activitats = [];
 
 async function carregarActivitats() {
 
-    const resposta = await fetch(
+   const resposta = await fetch(
   `data/catalog.json?t=${Date.now()}`
+  
 );
-
-    console.log(resposta);
 
     activitats = await resposta.json();
 
