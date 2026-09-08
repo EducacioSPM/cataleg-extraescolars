@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: [DIAGNÒSTIC] Descarrega catalog.json des de OneDrive
+      - name: "DIAGNOSTIC - Descarrega catalog.json des de OneDrive"
         run: |
           echo "Codi HTTP rebut:"
           curl -sL -o response.txt -w "%{http_code}\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "${{ secrets.CATALOG_JSON_URL }}"
