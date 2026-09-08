@@ -3,7 +3,7 @@ name: Update catalog.json
 on:
   workflow_dispatch:          # permet executar-ho manualment des de GitHub
   schedule:
-    - cron: '*/15 * * * *'    # comprova canvis cada 15 minuts (repo públic = gratuït i il·limitat)
+    - cron: '*/5 * * * *'     # comprova canvis cada 5 minuts (repo públic = gratuït i il·limitat; mínim tècnic de GitHub Actions)
 
 permissions:
   contents: write
@@ -35,4 +35,3 @@ jobs:
             echo "Sense canvis, no cal fer commit."
             rm -f catalog.json.new
           fi
-
