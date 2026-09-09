@@ -137,11 +137,11 @@ function mostrarDetall(index) {
 
         <section class="fitxa-seccio">
 
-            <h3>Més informació</h3>
+            <h3></h3>
 
             <p class="text-info-extra">
-                Per conèixer els detalls sobre el procediment d'inscripció,
-                els terminis o altra informació específica d'aquesta activitat,
+                Per consultar el procediment d'inscripció, 
+                els terminis i la informació específica d'aquesta activitat, 
                 fes clic al següent enllaç.
             </p>
 

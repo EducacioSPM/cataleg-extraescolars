@@ -50,23 +50,23 @@ function pintarTargetes(llista) {
             </div>
 
             <div class="organitzador">
-                🏫 ${a["NomOrganitzador"]}
-            </div>
+    <span class="emoji">🏫</span> ${a["NomOrganitzador"]}
+</div>
 
-            <div>
-                👧 Nascuts entre ${a["Max_AnyNaixement"]} i ${a["Min_AnyNaixement"]}
-            </div>
+<div>
+    <span class="emoji">👧</span> Nascuts entre ${a["Max_AnyNaixement"]} i ${a["Min_AnyNaixement"]}
+</div>
 
-            <div>
-                🕒 ${a["HorariActivitat"]}
-            </div>
+<div>
+    <span class="emoji">🕒</span> ${a["HorariActivitat"]}
+</div>
 
-            <div class="preu">
-                💶 ${a["PreuMensual"]} €/mes
-            </div>
+<div class="preu">
+    <span class="emoji">💶</span> ${a["PreuMensual"]} €/mes
+</div>
 
             <button onclick="mostrarDetall(${activitats.indexOf(a)})">
-                Més informació
+                Obre la fitxa
             </button>
 
         </article>

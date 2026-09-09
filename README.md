@@ -13,7 +13,7 @@ SharePoint
 ↓
 Power Automate
 ↓
-Google Drive (compte personal, fitxer intermedi)
+Google Drive (compte definitiu del projecte, fitxer intermedi)
 ↓
 GitHub Action (comprovació periòdica cada 5 min)
 ↓
@@ -86,6 +86,13 @@ tipus:
 https://drive.google.com/uc?export=download&id=<FILE_ID>
 ```
 
+> El compte de Google Drive fet servir és el compte **definitiu** del
+> projecte (no un compte de proves). Tant l'enllaç complet com l'ID del
+> fitxer estan guardats només al secret `CATALOG_JSON_URL` de GitHub i a
+> la configuració de l'acció "Update file" de Power Automate — no es
+> publiquen en aquest document per motius de seguretat. Si mai cal
+> migrar a un altre compte, vegeu la secció "Manteniment" més avall.
+
 ---
 
 # GitHub Action
@@ -96,7 +103,7 @@ Fitxer:
 
 ## Trigger
 ```text
-schedule: cron cada 5 minuts
+schedule: cron cada 5 minuts (mínim tècnic permès per GitHub Actions)
 workflow_dispatch: execució manual
 ```
 
@@ -152,9 +159,14 @@ GitHub Pages
 ↓
 Web actualitzada
 ```
-Tot el procés és automàtic. El marge d'espera màxim entre una modificació a
-SharePoint i la seva publicació a la web és d'uns 5 minuts (temps del cicle
-de comprovació de la GitHub Action).
+Tot el procés és automàtic. El marge d'espera habitual entre una modificació
+a SharePoint i la seva publicació a la web és d'uns 5 minuts (temps del cicle
+de comprovació de la GitHub Action). GitHub no garanteix una execució exacta
+del `cron` cada 5 minuts: en moments de càrrega alta del servei, alguna
+execució es pot retardar o saltar-se, i la següent ho recull igualment. No
+és un error, és un comportament conegut de GitHub Actions amb intervals
+curts — per a aquest cas d'ús (catàleg d'activitats) no suposa cap problema
+real.
 
 ---
 
@@ -169,6 +181,7 @@ actual:
 | Enllaç directe de OneDrive/SharePoint corporatiu | El tenant bloqueja l'accés anònim automatitzat (Conditional Access); retorna sempre la pàgina de login en comptes del fitxer |
 | Acció `HTTP` nativa de Power Automate | Connector premium en aquest tenant, no disponible |
 | Connector `GitHub` → `Create or update file content` | Acció no disponible a la llista de connectors d'aquest entorn |
+| Compte de Google Drive de proves (inicial) | Migrat al compte definitiu del projecte un cop validada l'arquitectura; el mecanisme (Update file amb ID fixe) es manté igual, només canvia el compte i l'ID del fitxer |
 
 La solució final combina un **compte personal de Google Drive** com a
 bústia intermèdia (fora de qualsevol política corporativa que bloquegi
@@ -204,6 +217,7 @@ bloquejos de seguretat del tenant.
 ✅ Lectura del catalog.json
 ✅ Filtres funcionant
 ✅ Fitxa de detall funcionant
+✅ Camp Observacions mostrat a la fitxa de detall (condicional, només si té contingut)
 ✅ Desplegament GitHub Pages funcionant
 
 ---
@@ -223,9 +237,16 @@ La sincronització és automàtica (amb un marge de fins a 5 minuts).
 
 ## Punts a vigilar
 
-- **Compte de Google Drive personal:** el fitxer intermedi viu en un
-  compte personal, no corporatiu. Cal tenir documentat qui hi té accés
-  i com recuperar-lo si la persona responsable canvia de rol.
+- **Compte de Google Drive:** el fitxer intermedi viu en un compte de
+  Google (fora del tenant corporatiu de SharePoint). Cal tenir
+  documentat qui hi té accés i com recuperar-lo si la persona
+  responsable canvia de rol.
+- **Organització de GitHub correcta:** aquest repositori pertany a
+  l'organització `EducacioSPM` (`EducacioSPM/cataleg-extraescolars`),
+  NO a `ObservatoriCiutatSPM` (una altra organització del mateix
+  compte d'usuari). En comprovar execucions del workflow, fixeu-vos
+  sempre en la ruta completa a la part superior de la pàgina de
+  GitHub, no només en el nom d'usuari que apareix com a "triggered by".
 - **Inactivitat de 60 dies:** GitHub desactiva automàticament els
   workflows amb `schedule` si el repositori no té cap activitat durant
   60 dies consecutius. Com que el propi workflow genera commits quan hi
