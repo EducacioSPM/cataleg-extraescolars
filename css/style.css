@@ -60,6 +60,7 @@ header h1{
     border-radius:8px;
     font-size:0.9rem;
     margin: 0 auto;
+    text-align:center;
 }
 
 /* ---------- CATÀLEG ---------- */
@@ -345,6 +346,7 @@ header h1{
     flex-shrink:0;
     margin-top:-60px;
     margin-bottom:-80px;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,.7));
 }
 
 #paginacio{
@@ -655,9 +657,11 @@ footer{
     }
 
         #filters{
-        position:static;
-        top:auto;
-    }
+    position:static;
+    top:auto;
+    height:auto;
+    min-height:auto;
+}
 
 .hero-content{
     flex-direction:column;
@@ -673,7 +677,10 @@ footer{
 }
 
 .hero-illustration{
-    height:90px;
+    height:120px;
+    margin-top:-20px;
+    margin-bottom:-30px;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,.7));
 }
 
 .header-content{
@@ -689,6 +696,12 @@ footer{
 
 #filtersToggle{
     cursor:pointer;
+    padding:12px;
+    border-radius:8px;
+}
+
+#filtersToggle:hover{
+    background:#f5f5f5;
 }
 
 #filtersContent.ocult{
@@ -704,6 +717,7 @@ footer{
     top:0;
     left:0;
     right:0;
+    height:100vh;
     background:white;
     z-index:2000;
     padding:20px;
@@ -724,9 +738,12 @@ footer{
     padding:12px;
     border:none;
     border-radius:8px;
-    background:#74dd77 ;
+    background: linear-gradient(135deg,#6f8fff,#9e7cf2);
+    color:white;
     color:white;
     font-weight:600;
+    cursor:pointer;
+    font-size:0.9rem;
 }
 
 }
@@ -820,5 +837,9 @@ footer{
 
 #descripcioText {
     font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+.fitxa-observacions{font-size: 0.8rem;
     line-height: 1.2;
 }

@@ -24,25 +24,30 @@ function mostrarDetall(index) {
 
     <h3>Descripció</h3>
 
-    <p id="descripcioText">
-        ${
-            a["DescripcioActivitat"].length > 180
-                ? a["DescripcioActivitat"].substring(0, 180) + "..."
-                : a["DescripcioActivitat"]
-        }
-    </p>
-
+   <p id="descripcioText">
     ${
-        a["DescripcioActivitat"].length > 180
-            ? `<button
-                    type="button"
-                    id="toggleDescripcio"
-                    data-curta="${a["DescripcioActivitat"].substring(0, 180)}..."
-                    data-completa="${a["DescripcioActivitat"]}">
-                    Veure més
-               </button>`
-            : ""
+        window.innerWidth <= 768
+            ? a["DescripcioActivitat"]
+            : (
+                a["DescripcioActivitat"].length > 180
+                    ? a["DescripcioActivitat"].substring(0, 180) + "..."
+                    : a["DescripcioActivitat"]
+              )
     }
+</p>
+
+  ${
+    a["DescripcioActivitat"].length > 180 &&
+    window.innerWidth > 768
+        ? `<button
+                type="button"
+                id="toggleDescripcio"
+                data-curta="${a["DescripcioActivitat"].substring(0, 180)}..."
+                data-completa="${a["DescripcioActivitat"]}">
+                Veure més
+           </button>`
+        : ""
+}
 
 </section>
     
